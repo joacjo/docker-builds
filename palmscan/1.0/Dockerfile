@@ -27,6 +27,9 @@ RUN apt-get update --fix-missing \
     && conda update -y conda \
     && conda install -c bioconda -c conda-forge pip git
 
-RUN chmod u+x /palmscan/bin/palmscan
 RUN git clone https://github.com/rcedgar/palmscan
+USER root
+RUN chmod u+x /palmscan/bin/palmscan
+USER node
+
 ENV PATH="/palmscan/bin:${PATH}" 
