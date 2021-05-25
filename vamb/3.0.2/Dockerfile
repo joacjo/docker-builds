@@ -24,6 +24,7 @@ RUN apt-get update --fix-missing \
     && rm Miniconda3-latest-Linux-x86_64.sh \
     && conda update -y conda \
     && conda install -c anaconda -y python=3.8.2 \
+    && conda install -c bioconda metabat2 samtools \
     && conda install pip \
     && conda install -c pytorch pytorch torchvision cudatoolkit=10.2 \
     && pip install numpy==1.19.5 torch==1.7.1 pysam==0.16.0.1 \
