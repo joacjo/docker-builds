@@ -16,6 +16,9 @@ LABEL maintainer.email="joacjohansen@gmail.com"
 ENV PATH=/miniconda/bin:${PATH} \
     LC_ALL=C
 
+# Prepare directory structure
+RUN mkdir /app && mkdir /appdownload
+
 # Install VAMB
 RUN apt-get update --fix-missing \
     && apt-get install -y wget gcc \
@@ -30,4 +33,6 @@ RUN apt-get update --fix-missing \
     && pip install numpy==1.19.5 torch==1.7.1 pysam==0.16.0.1 \
     	 torchvision==0.8.2 typing_extensions==3.7.4.3 Pillow==8.1.0 \
 	 https://github.com/RasmussenLab/vamb/archive/3.0.2.zip
+
+COPY write_concat_bins.py /app
 
