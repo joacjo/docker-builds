@@ -27,6 +27,4 @@ RUN apt-get update --fix-missing \
     && rm Miniconda3-latest-Linux-x86_64.sh \
     && conda update -y conda \
     && conda install -c conda-forge -c bioconda coverm \
-    && conda install seqtk 
-
-
+    && conda install -c conda-forge -c bioconda seqtk
