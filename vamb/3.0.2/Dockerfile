@@ -34,5 +34,5 @@ RUN apt-get update --fix-missing \
     	 torchvision==0.8.2 typing_extensions==3.7.4.3 Pillow==8.1.0 \
 	 https://github.com/RasmussenLab/vamb/archive/3.0.2.zip
 
-COPY write_concat_bins.py /app
+COPY /write_concat_bins.py /app
 
