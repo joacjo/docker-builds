@@ -24,6 +24,6 @@ RUN apt-get update --fix-missing \
     && rm Miniconda3-latest-Linux-x86_64.sh \
     && conda update -y conda \ 
     && conda install python \
-    && conda install hmmer prodigal pplacer \
+    && conda install -c bioconda hmmer prodigal pplacer \
     && pip3 install numpy matplotlib pysam checkm-genome \
     && conda install -c conda-forge -c bioconda seqtk
