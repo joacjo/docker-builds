@@ -22,6 +22,8 @@ RUN apt-get update --fix-missing \
     && wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b \
     && rm Miniconda3-latest-Linux-x86_64.sh \
-    && conda update -y conda \
-    && conda install -c bioconda checkm-genome \
+    && conda update -y conda \ 
+    && conda install python \
+    && conda install hmmer prodigal pplacer \
+    && pip3 install numpy matplotlib pysam checkm-genome \
     && conda install -c conda-forge -c bioconda seqtk
