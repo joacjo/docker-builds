@@ -30,4 +30,4 @@ RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gmes_linux_64.tar.gz
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gm_key_64.gz
 RUN zcat gm_key_64.gz > ~/gm_key
 RUN tar -xzvf gmes_linux_64.tar.gz
-RUN cp gmes_linux_64/* /usr/local/bin
+RUN cp gmes_linux_64/* usr/bin
