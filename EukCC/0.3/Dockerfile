@@ -21,7 +21,9 @@ RUN apt-get update --fix-missing \
     && wget http://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && bash Miniconda3-latest-Linux-x86_64.sh -p /miniconda -b \
     && rm Miniconda3-latest-Linux-x86_64.sh \
-    && conda update -y conda \ 
+    && conda update -y conda \
+    && conda install pip \
+    && pip install EukRep \
     && conda install -c bioconda  -c conda-forge eukcc \
     && apt install -y cpanminus make gcc dialog \
     && cpanm inc::Module::Install::DSL Hash::Merge MCE::Mutex FindBin Test::Pod Logger::Simple Parallel::ForkManager.pm YAML
@@ -30,4 +32,5 @@ RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gmes_linux_64.tar.gz
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gm_key_64.gz
 RUN zcat gm_key_64.gz > ~/gm_key
 RUN tar -xzvf gmes_linux_64.tar.gz
-RUN cp gmes_linux_64/* usr/bin
+RUN cp gmes_linux_64/get_sequence_from_GTF.pl /usr/bin
+RUN cp gmes_linux_64/gmes_petap.pl /usr/bin
