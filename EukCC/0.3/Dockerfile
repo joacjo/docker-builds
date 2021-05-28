@@ -32,5 +32,7 @@ RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gmes_linux_64.tar.gz
 RUN wget http://topaz.gatech.edu/GeneMark/tmp/GMtool_jRNgT/gm_key_64.gz
 RUN zcat gm_key_64.gz > ~/gm_key
 RUN tar -xzvf gmes_linux_64.tar.gz
-RUN cp gmes_linux_64/get_sequence_from_GTF.pl /usr/bin
-RUN cp gmes_linux_64/gmes_petap.pl /usr/bin
+RUN cp gmes_linux_64/get_sequence_from_GTF.pl /usr/bin \
+    && cp gmes_linux_64/gmes.cfg /usr/bin/ \
+    && gmes_linux_64/gmes_petap.pl /usr/bin \
+    && cp gmes_linux_64/gmhmme3 /usr/bin/
